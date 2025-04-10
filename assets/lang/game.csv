@@ -1,0 +1,5 @@
+key,es,en
+game.size,Tamaño del tablero:,Board size:
+game.size-small,4x4,4x4
+game.size-mid,8x4,8x4
+game.size-big,8x6,8x6

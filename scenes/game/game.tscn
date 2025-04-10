@@ -1,0 +1,58 @@
+[gd_scene load_steps=4 format=3 uid="uid://dkb3fjyxwfguv"]
+
+[ext_resource type="Script" uid="uid://dlc75o3nmy83t" path="res://scenes/game/game.gd" id="1_sul5r"]
+
+[sub_resource type="Gradient" id="Gradient_ifgtf"]
+colors = PackedColorArray(0.858824, 0.933333, 0.933333, 1, 0.262934, 0.262932, 0.262932, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_sul5r"]
+gradient = SubResource("Gradient_ifgtf")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[node name="Game" type="Control" node_paths=PackedStringArray("grid", "match_timer")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_sul5r")
+grid = NodePath("MarginContainer/Grid")
+match_timer = NodePath("MatchTimer")
+
+[node name="BG" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_sul5r")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="Grid" type="GridContainer" parent="MarginContainer"]
+clip_contents = true
+layout_mode = 2
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 5
+
+[node name="MatchTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="timeout" from="MatchTimer" to="." method="_on_match_timer_timeout"]

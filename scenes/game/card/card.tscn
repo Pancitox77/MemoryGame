@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=3 uid="uid://bgjvpxn38etrk"]
+
+[ext_resource type="Script" uid="uid://cv5puq666b7h0" path="res://scenes/game/card/card.gd" id="1_lllmj"]
+[ext_resource type="Texture2D" uid="uid://ds6ax861t4i0a" path="res://icon.svg" id="2_p3b06"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p3b06"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.262745, 0.262745, 0.262745, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_size = 1
+shadow_offset = Vector2(1, 1)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_p3b06"]
+load_path = "res://.godot/imported/icon.svg-7dd63cb38e017af4f18c014178845f3b.ctex"
+
+[node name="Card" type="PanelContainer" node_paths=PackedStringArray("texture_rect")]
+self_modulate = Color(0.6, 0.6, 0.72549, 1)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -650.0
+offset_bottom = -400.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_default_cursor_shape = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_p3b06")
+script = ExtResource("1_lllmj")
+normal_texture = SubResource("CompressedTexture2D_p3b06")
+normal_background = Color(0.6, 0.6, 0.72549, 1)
+active_background = Color(0.4, 0.6, 0.6, 1)
+texture_rect = NodePath("TextureRect")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("2_p3b06")
+stretch_mode = 3
+
+[connection signal="gui_input" from="." to="." method="_gui_input"]
