@@ -1,8 +1,8 @@
 extends Control
 
 
-func start_game(size: Global.GridSize) -> void:
-	Global.set_grid_size(size)
+func start_game(grid_size: Global.GridSize) -> void:
+	Global.set_grid_size(grid_size)
 	get_tree().change_scene_to_file("res://scenes/game/game.tscn")
 
 

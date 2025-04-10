@@ -41,17 +41,17 @@ func generate_cards(width: int, height: int) -> void:
 	while quantity < max_quantity:
 		var symbol_key : String = symbols[ symbol_index % symbols.size() ]
 		
-		var card1 : Card = CardScene.instantiate()
-		card1.symbol = Card.Symbol.get(symbol_key)
+		var new_card1 : Card = CardScene.instantiate()
+		new_card1.symbol = Card.Symbol.get(symbol_key)
 		
-		var card2 : Card = CardScene.instantiate()
-		card2.symbol = Card.Symbol.get(symbol_key)
+		var new_card2 : Card = CardScene.instantiate()
+		new_card2.symbol = Card.Symbol.get(symbol_key)
 		
-		card1.card_clicked.connect(func(): self._on_card_clicked(card1))
-		card2.card_clicked.connect(func(): self._on_card_clicked(card2))
+		new_card1.card_clicked.connect(func(): self._on_card_clicked(new_card1))
+		new_card2.card_clicked.connect(func(): self._on_card_clicked(new_card2))
 		
-		cards.append(card1)
-		cards.append(card2)
+		cards.append(new_card1)
+		cards.append(new_card2)
 		
 		symbol_index += 1
 		quantity += 2
