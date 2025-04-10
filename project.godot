@@ -12,6 +12,7 @@ config_version=5
 
 config/name="MemoryGame"
 config/version="1.0.1"
+config/tags=PackedStringArray("2d", "completado", "corto_plazo", "prácticas")
 run/main_scene="uid://g2qpjclpm3y"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="uid://ds6ax861t4i0a"
@@ -39,3 +40,4 @@ locale/translations=PackedStringArray("res://assets/lang/game.es.translation")
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true
